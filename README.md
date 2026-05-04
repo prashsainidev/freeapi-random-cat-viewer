@@ -1,16 +1,36 @@
-# React + Vite
+# Feline Editorial (Random Cat Viewer)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A sleek, magazine-style React application that fetches and displays random cat breeds using the FreeAPI endpoint. I wanted to move away from the standard boring API card layouts and try something that feels more like a high-end editorial or luxury catalog. 
 
-Currently, two official plugins are available:
+## What it does
+Every time you click "Discover Another", the app pulls a random cat from the database and updates the UI. Instead of just showing a basic name and picture, it goes deep into the details:
+- **Core Info:** Name, origin, weight, and lifespan.
+- **Traits & Temperament:** Highlights if the cat is a lap cat, rare, hypoallergenic, or strictly indoor.
+- **Stats:** Shows intelligence, energy level, adaptability, and affection using a custom dot-rating system (e.g. 4 out of 5 dots).
+- **Wikipedia Integration:** Directly links to the breed's Wikipedia page for deeper reading.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack & Design
+- **React (Vite)** for the frontend architecture.
+- **Vanilla CSS** for styling (No Tailwind or Bootstrap).
+- The design uses a dark mode palette (`#0d0d0d`) with warm gold/amber accents (`#c9a252`). I paired 'Cormorant Garamond' for the classy serif headings with 'DM Sans' for clean body text.
+- **Responsive:** Added specific media queries and `object-fit: contain` logic to ensure cat images don't get awkwardly cropped on smaller 320px mobile screens.
 
-## React Compiler
+## How to run this locally
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. Clone the repo and navigate to this folder.
+2. Install the dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the dev server:
+   ```bash
+   npm run dev
+   ```
+4. Open the local link provided by Vite in your browser.
 
-## Expanding the ESLint configuration
+## API Used
+- **URL:** `https://api.freeapi.app/api/v1/public/cats/cat/random`
+- This endpoint returns a new random cat object on every request. This is why the UI completely changes on every single load, unlike standard list-based APIs that return fixed arrays.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Key Learnings
+Building this helped me understand how to handle dynamic nested objects in React state (`catView.weight?.metric`), and how to map out dynamic UI elements like the dot ratings based on raw integer values coming directly from the backend.
