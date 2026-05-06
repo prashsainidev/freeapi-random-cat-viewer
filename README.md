@@ -3,7 +3,9 @@
 ![Project Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
 ![Tech Stack](https://img.shields.io/badge/Tech-React_|_Vite_|_CSS3-blue?style=for-the-badge)
 
-A sleek, magazine-style React application that fetches and displays random cat breeds using the FreeAPI endpoint. I wanted to move away from the standard boring API card layouts and try something that feels more like a high-end editorial or luxury catalog. 
+**Welcome to Part 3 of my FreeAPI Mastery Series.** After building complex lists and grids in the first two parts of this series, I wanted to shift focus to single-item data architecture.
+
+This is a sleek, magazine-style React application that fetches and displays random cat breeds using the FreeAPI endpoint. I wanted to move away from the standard boring API card layouts and try something that feels more like a high-end editorial or luxury catalog. 
 
 ## What it does
 
